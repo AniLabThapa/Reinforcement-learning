@@ -11,6 +11,16 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
 
+import torch
+import torch.nn as nn
+import torch.optim as optim
+import torch.nn.functional as F
+from torch.distributions import Categorical
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import offsetbox as moffsetbox
+from PIL import Image, ImageDraw, ImageFont
+
 _EMOJI_FONT = ImageFont.truetype(
     "/System/Library/Fonts/Apple Color Emoji.ttc", 64
 )
@@ -18,7 +28,7 @@ _EMOJI_FONT = ImageFont.truetype(
 EMOJI_MAPS = {"S": "🚀", "H": "🕳️", "G": "🏁", "F": ""}
 ARROWS_MAPS = {0: "←", 1: "↓", 2: "→", 3: "↑"}
 
-def _emoji_image(char: str, out_size: int = 80) -> np.ndarray:
+def _emoji_image(char: str, out_size: int = 150) -> np.ndarray:
     """Render a single emoji glyph to a centred RGBA numpy array."""
     N = 109
     img  = Image.new("RGBA", (N, N), (0, 0, 0, 0))
@@ -30,6 +40,7 @@ def _emoji_image(char: str, out_size: int = 80) -> np.ndarray:
     return np.asarray(img.resize((out_size, out_size), Image.LANCZOS))
 
 
+
 def _place_emoji(ax, char: str, x: float, y: float,
                  zoom: float = 0.55, zorder: int = 10):
     """Overlay an emoji at data-coordinate (x, y) on the given axes."""
@@ -38,42 +49,10 @@ def _place_emoji(ax, char: str, x: float, y: float,
     ab  = moffsetbox.AnnotationBbox(im, (x, y), frameon=False, zorder=zorder)
     ax.add_artist(ab)
 
+
 def plot_trajectory_history(env, trajs, policy=None, jitter=0.03, alpha=0.05):
     rows, cols = env.n_rows, env.n_cols
     fig, ax = plt.subplots(figsize=(4, 4))
-
-    # ── 1. Background grid ────────────────────────────────────────────────────
-    tile_colors = {
-        "S": "#cce5ff",   # blue  – start
-        "H": "#f8d7da",   # red   – hole
-        "G": "#d4edda",   # green – goal
-        "F": "#89cfef",   # light blue – frozen
-    }
-    ARROWS_MAPS = {0: "←", 1: "↓", 2: "→", 3: "↑"}
-
-    for r in range(rows):
-        for c in range(cols):
-            tile = env.grid[r][c]
-
-            # Coloured cell
-            rect = plt.Rectangle(
-                (c, rows - r - 1), 1, 1,
-                facecolor=tile_colors[tile],
-                edgecolor="white", lw=1.5, zorder=0,
-            )
-            ax.add_patch(rect)
-
-            # Policy arrow (plain text is fine — no emoji font needed)
-            if policy is not None:
-                if tile in ("S", "F"):
-                    state_idx = r * cols + c
-                    action    = policy[state_idx]
-                    ax.text(
-                        c + 0.8, rows - r - 0.2,
-                        ARROWS_MAPS[action],
-                        color="green", fontsize=12,
-                        ha="center", va="center", zorder=5,
-                    )
 
     # ── 1. Background grid ────────────────────────────────────────────────────
     tile_colors = {
@@ -272,5 +251,3 @@ def animate_policy_value_video(env, policy_history, V_history=None, interval=500
     ani = animation.FuncAnimation(fig, update, frames=len(policy_history), interval=interval)
     plt.close(fig)  # Prevent double display in notebooks
     return ani
-
-
