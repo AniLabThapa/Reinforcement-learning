@@ -146,8 +146,10 @@ This repository is open-source and available under the **MIT License**.
 
 For any inquiries, suggestions, or feedback, feel free to reach out.
 
-[![Email](https://img.shields.io/badge/Email-dhakalsumn739%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:dhakalsumn739@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Suman%20Dhakal-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/suman-dhakal-2822a1198/)
+<<<<<<< HEAD
+[![Email](https://img.shields.io/badge/Email-anil369@gachon.ac.kr-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:anil369@gachon.ac.kr)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Thapa%20369-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/thapa369/)
+>>>>>>> 2cd925cb (Add README)
 
 
 ## References
