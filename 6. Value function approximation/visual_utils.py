@@ -1,18 +1,16 @@
-import matplotlib.pyplot as plt
-import matplotlib.animation as animation
+import os
+import platform
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 import numpy as np
-from IPython.display import HTML
 import pandas as pd
-from IPython.display import display
-from frozen_lake_environment import State
-from matplotlib.collections import LineCollection
 import matplotlib.offsetbox as moffsetbox
-import numpy as np
-from PIL import Image, ImageDraw, ImageFont
-
+import matplotlib.pyplot as plt
+from matplotlib.collections import LineCollection
+import matplotlib.animation as animation
+from frozen_lake_environment import State
 
 _EMOJI_FONT = ImageFont.truetype(
-    "/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf", 109
+    "/System/Library/Fonts/Apple Color Emoji.ttc", 64
 )
 
 EMOJI_MAPS = {"S": "🚀", "H": "🕳️", "G": "🏁", "F": ""}
@@ -37,7 +35,6 @@ def _place_emoji(ax, char: str, x: float, y: float,
     im  = moffsetbox.OffsetImage(arr, zoom=zoom)
     ab  = moffsetbox.AnnotationBbox(im, (x, y), frameon=False, zorder=zorder)
     ax.add_artist(ab)
-
 
 def plot_trajectory_history(env, trajs, policy=None, jitter=0.03, alpha=0.05):
     rows, cols = env.n_rows, env.n_cols
