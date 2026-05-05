@@ -87,6 +87,7 @@ def plot_trajectory_history(env, trajs, policy=None, jitter=0.03, alpha=0.05):
                         ha="center", va="center", zorder=5,
                     )
 
+    
     # ── 2. Hand-drawn trajectory strokes ─────────────────────────────────────
     all_strokes = []
     for path in trajs:
