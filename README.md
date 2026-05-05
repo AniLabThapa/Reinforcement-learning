@@ -23,7 +23,7 @@ Having these prerequisites will make it significantly easier to understand the a
 
 This repository was inspired by several excellent educational resources.
 
-The primary inspiration comes from the lecture series by WINDY Lab and Shiyu Zhao, which provides a very clear and beginner-friendly introduction to reinforcement learning:
+The primary inspiration comes from the lecture series by Kyunghyun Lee, WINDY Lab and Shiyu Zhao, which provides a very clear and beginner-friendly introduction to reinforcement learning:
 
 - https://www.youtube.com/watch?v=ZHMWHr9811U&list=PLEhdbSEZZbDaFWPX4gehhwB9vJZJ1DNm8
 
