@@ -116,11 +116,8 @@ In the **mini-projects** section, additional reinforcement learning problems wil
 * Pandas == 2.2.3
 * Jupyter Notebook
 
-
-
 ## 📈 Future Additions
 Planned extensions:
-  * PPO (Proximal Policy Optimization)
   * Soft Actor-Critic (SAC)
   * Offline Reinforcement Learning
   * Robust Reinforcement Learning
@@ -129,7 +126,7 @@ Planned extensions:
   * Safe Reinforcement Learning
   * Multi-Agent Reinforcement Learning
   * Additional Continuous-Control and Financial RL Environments
-
+  * Theoretical Foundations and Analysis of RL Algorithms
 
 ## 🤝 Contributions
 
