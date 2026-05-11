@@ -119,18 +119,16 @@ In the **mini-projects** section, additional reinforcement learning problems wil
 
 
 ## 📈 Future Additions
-
 Planned extensions:
-
-  *PPO (Proximal Policy Optimization)
-  *Soft Actor-Critic (SAC)
-  *Offline Reinforcement Learning
-  *Robust Reinforcement Learning
-  *Approximate Dynamic Programming
-  *Stochastic Control and Optimization
-  *Safe Reinforcement Learning
-  *Multi-Agent Reinforcement Learning
-  *Additional Continuous-Control and Financial RL Environments
+  * PPO (Proximal Policy Optimization)
+  * Soft Actor-Critic (SAC)
+  * Offline Reinforcement Learning
+  * Robust Reinforcement Learning
+  * Approximate Dynamic Programming
+  * Stochastic Control and Optimization
+  * Safe Reinforcement Learning
+  * Multi-Agent Reinforcement Learning
+  * Additional Continuous-Control and Financial RL Environments
 
 
 ## 🤝 Contributions
