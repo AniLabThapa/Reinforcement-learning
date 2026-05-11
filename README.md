@@ -122,11 +122,15 @@ In the **mini-projects** section, additional reinforcement learning problems wil
 
 Planned extensions:
 
-* PPO (Proximal Policy Optimization)
-* DDPG
-* Soft Actor-Critic (SAC)
-* Multi-Agent RL
-* More RL environments
+  *PPO (Proximal Policy Optimization)
+  *Soft Actor-Critic (SAC)
+  *Offline Reinforcement Learning
+  *Robust Reinforcement Learning
+  *Approximate Dynamic Programming
+  *Stochastic Control and Optimization
+  *Safe Reinforcement Learning
+  *Multi-Agent Reinforcement Learning
+  *Additional Continuous-Control and Financial RL Environments
 
 
 ## 🤝 Contributions
